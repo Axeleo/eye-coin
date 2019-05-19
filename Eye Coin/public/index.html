@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Carrois+Gothic" rel="stylesheet">
+    <title>Eye Coin</title>
+    <script src="webgazer.js"></script>
+    <!-- Cookies js -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <!-- Moment js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+<body>
+    <div class="content-wrapper">
+        <h1>Eye Coin</h1>
+        <div class="video-player">
+            <div id="player"></div>
+        </div>
+        <div class="video-playlist">
+            <a data-link="HNdOPzcD3wI" class="video-playlist-link">Samsung Galaxy: Be Together</a>
+            <a data-link="HXs8G7Kjrd8" class="video-playlist-link">Apple Watch Series 4</a>
+            <a data-link="1iksaFG6wqM" class="video-playlist-link">Audi - Daughter</a>
+            <a data-link="TnzFRV1LwIo" class="video-playlist-link">Cadbury's Gorilla</a>
+            <a data-link="dAjff7u3dkk" class="video-playlist-link">Dolmio</a>
+        </div>
+        <div class="instructions">
+            <h4>INSTRUCTIONS</h4>
+            <ol>
+                <li>Click the eye, then click in a blank area on the screen to activate the gaze tracking</li>
+                <li>Use the controls below the player to play and pause the video and the links on the side to load new videos</li>
+                <li>The colored circle below the player indicates if you are looking at the screen, the video will pause if you look away</li>
+                <li>To calibrate the gaze tracking click on blank areas around the page while following the mouse with your eyes</li>
+            </ol>
+            <div class="legend">
+                <div class="legend-row">
+                    <div class="gaze-indicator-legend"></div>
+                    <span>&nbsp;- Ready to play</span>
+                </div>
+                <div class="legend-row">
+                    <div class="gaze-indicator-legend red"></div>
+                    <span>&nbsp;- Can't detect</span>
+                </div>
+            </div>
+        </div>
+        <div class="statistics">
+            <h4>Watch Counter</h4>
+            <div class="watch-counter">
+                <div>
+                    <span>Time: </span>
+                    <div class="time-watched"></div>
+                </div>
+                <div>
+                    <span>Videos: </span>
+                    <div class="videos-watched"></div>
+                </div>
+            </div>
+        </div>
+        <button class="generate">Generate</button>
+        <button class="reset">Reset</button>
+        <div class="below-video">
+            <div class="are-you-watching">
+                <span>Are you watching?</span>
+                <div class="gazeIndicator"></div>
+            </div>
+            <div class="player-controls">
+                <div class="init"><i class="fas fa-eye"></i></div>
+                <div class="play"><i class="fab fa-youtube"></i></div>
+                <div class="pause"><i class="fas fa-pause"></i></div>
+            </div>
+        </div>
+        <div class="credits hidden">
+            <h2>Credits</h2>
+            <i class="fas fa-times"></i>
+            <div class="credit-panels">
+                <div class="credit-explanation">
+                    <div>
+                        <span>Total Videos:</span>
+                        <div class="time-watched"></div>
+                    </div>
+                    <div>
+                        <span>Total Time: </span>
+                        <div class="videos-watched"></div>
+                    </div>
+                    <hr>
+                    <p>1 video = 100 credits</p>
+                    <p>20 Second watched = 10 credits</p>
+                    <h3>Your balance</h3>
+                    <div class="credit-counter">
+                        <span class="credit-count">0</span>
+                        <span>Credits</span>
+                    </div>
+                </div>
+                <div class="payment">
+                    <h3>Claim</h3>
+                    <div class="bitcoin">
+                        <img src="./bitcoin.png" alt="">
+                        <span>1 Credit <br> 0.00001 </span>
+                        <div class="bitcoin-btn">
+                            <span>Bitcoin</span>
+                        </div>
+                    </div>
+                    <div class="paypal">
+                        <img src="./paypal-logo-preview.png" alt="">
+                        <span>1 Credit <br> 0.01 AUD</span>
+                        <div class="paypal-btn">
+                            <span>Paypal</span>
+                        </div>
+                    </div>
+                    <div class="ether">
+                        <img src="./ether.png" alt="">
+                        <span>1 Credit <br> 0.0020 </span>
+                        <div class="ether-btn">
+                            <span>Ether</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="app.js"></script>
+</html>
