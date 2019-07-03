@@ -12,6 +12,21 @@ const creditCloser = document.querySelector('.fa-times')
 const generateButton = document.querySelector('.generate')
 const creditWindow = document.querySelector('.credits')
 const creditCount = document.querySelector('.credit-count')
+const surveyScreen = document.querySelector('.survey')
+const surveySubmitButton = document.querySelector('.survey button')
+
+
+const surveyRadioButtons1 = document.querySelectorAll('.survey__radio1')
+const surveyRadioButtons2 = document.querySelectorAll('.survey__radio2')
+const surveyRadioButtons3 = document.querySelectorAll('.survey__radio3')
+const surveyRadioButtons4 = document.querySelectorAll('.survey__radio4')
+
+
+let surveyAwnseredQ1 = false
+let surveyAwnseredQ2 = false
+let surveyAwnseredQ3 = false
+let surveyAwnseredQ4 = false
+
 
 let gazeIndicator = document.querySelector('.gazeIndicator')
 let webgazerInitialized = false
@@ -134,6 +149,56 @@ videoLinks.forEach(link => {
 	link.addEventListener('click', cueVideo);
 });
 
+// Adding condidtional logic to survey buttons
+surveyRadioButtons1.forEach(function(button) {
+	button.addEventListener('click', function() {
+		surveyAwnseredQ1 = true
+	})
+})
+
+surveyRadioButtons2.forEach(function(button) {
+	button.addEventListener('click', function() {
+		surveyAwnseredQ2 = true
+	})
+})
+
+surveyRadioButtons3.forEach(function(button) {
+	button.addEventListener('click', function() {
+		surveyAwnseredQ3 = true
+	})
+})
+
+surveyRadioButtons4.forEach(function(button) {
+	button.addEventListener('click', function() {
+		surveyAwnseredQ4 = true
+	})
+})
+
+// Closing the survey only if all the questions have been awnsered
+surveySubmitButton.addEventListener('click', function() {
+	if (surveyAwnseredQ1 && surveyAwnseredQ2 && surveyAwnseredQ3 && surveyAwnseredQ4) {
+		surveyScreen.classList.add('hidden')
+		surveyRadioButtons1.forEach(function(button) {
+			button.checked = false;
+		})
+		surveyRadioButtons2.forEach(function(button) {
+			button.checked = false;
+		})
+		surveyRadioButtons3.forEach(function(button) {
+			button.checked = false;
+		})
+		surveyRadioButtons4.forEach(function(button) {
+			button.checked = false;
+		})
+		surveyAwnseredQ1 = false
+		surveyAwnseredQ2 = false
+		surveyAwnseredQ3 = false
+		surveyAwnseredQ4 = false
+	} else {
+		return
+	}
+})
+
 
 // Gets any data already stored in cookies and sets it as the global state. Updates those stats on the page
 globalState = retriveCookies(globalState)
@@ -205,6 +270,7 @@ function onPlayerStateChange(event) {
 		globalState = recordTime(globalState, true)
 		updateStatistics(globalState)
 		storeCookies(globalState)
+		openSurvey()
 		webgazer.pause()
 	} else if (event.data == YT.PlayerState.PAUSED) {
 		globalState = recordTime(globalState)
@@ -217,6 +283,14 @@ function onPlayerStateChange(event) {
 		updateStatistics(globalState)
 		storeCookies(globalState)
 	}
+}
+
+function openSurvey() {
+	surveyScreen.classList.remove('hidden')
+}
+
+function closeSurvey() {
+	surveyScreen.classList.add('hidden')
 }
 
 function pauseVideo() {
